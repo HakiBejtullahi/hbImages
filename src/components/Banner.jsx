@@ -1,9 +1,8 @@
-import img from '../assets/banner-img.jpg';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr;
   margin-top: -6rem;
   align-items: center;
   min-height: calc(100vh - 66.78px - 3rem);
@@ -13,6 +12,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     padding-top: 3rem;
+
     p {
       margin-top: 2rem;
       color: var(--color-text);
@@ -55,7 +55,7 @@ const Wrapper = styled.div`
     }
   }
   .bannerImg-container {
-    display: none;
+    /* display: none; */
     position: relative;
     background-color: var(--color-title);
     height: 30rem;

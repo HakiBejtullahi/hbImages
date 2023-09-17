@@ -32,7 +32,6 @@ export const loader =
     const url = new URL(request.url);
 
     const searchTerm = url.searchParams.get('search') || 'cat';
-    console.log(searchTerm);
     setFromLocalStorage('currPage', 1);
     await queryClient.ensureQueryData(searchImagesQuery(searchTerm, 1));
     return { searchTerm };

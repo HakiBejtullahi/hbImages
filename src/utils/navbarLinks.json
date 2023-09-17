@@ -6,16 +6,21 @@
   },
   {
     "id": 2,
-    "address": "/latest",
-    "name": "latest"
-  },
-  {
-    "id": 3,
     "address": "/search",
     "name": "search"
   },
   {
+    "id": 3,
+    "address": "/latest",
+    "name": "latest"
+  },
+  {
     "id": 4,
+    "address": "/popular",
+    "name": "popular"
+  },
+  {
+    "id": 5,
     "address": "/about",
     "name": "about"
   }

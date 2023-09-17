@@ -10,12 +10,14 @@ import {
   SingleImage,
   SinglePageError,
   BrowseImages,
+  Popular,
 } from './pages';
 
 import { loader as browseImagesLoader } from './pages/BrowseImages';
 import { loader as singleImageLoader } from './pages/SingleImage';
 import { loader as randomImageLoader } from './pages/Landing';
 import { loader as latestImagesLoader } from './pages/Latest';
+import { loader as popularImagesLoader } from './pages/Popular';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -50,6 +52,12 @@ const router = createBrowserRouter([
         loader: latestImagesLoader(queryClient),
       },
       {
+        path: '/popular',
+        element: <Popular />,
+        errorElement: <SinglePageError />,
+        loader: popularImagesLoader(queryClient),
+      },
+      {
         path: '/search',
         element: <BrowseImages />,
         loader: browseImagesLoader(queryClient),
@@ -66,7 +74,6 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
