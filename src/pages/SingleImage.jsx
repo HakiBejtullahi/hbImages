@@ -129,13 +129,19 @@ const SingleImage = () => {
           <p>
             Created at: <span>{createdAt}</span>
           </p>
-          <p>Camera details : {cameraInfo?.name || 'not provided'}</p>
-          <p>
-            Likes: <span>{likes}</span>
-          </p>
-          <p>
-            Desc: <span>{desc}</span>
-          </p>
+          {cameraInfo ? (
+            <p>Camera details : {cameraInfo?.name || 'not provided'}</p>
+          ) : null}
+          {likes ? (
+            <p>
+              Likes: <span>{likes}</span>
+            </p>
+          ) : null}
+          {desc ? (
+            <p>
+              Desc: <span>{desc}</span>
+            </p>
+          ) : null}
         </div>
         <div className='btn-container'>
           <a href={download} target='_blank' rel='noreferrer' className='btn'>

@@ -14,12 +14,14 @@ const Wrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      input,
       p {
         margin: 0;
         font-size: 1.2rem;
         font-weight: bolder;
         text-align: right;
+        span {
+          color: var(--color-title);
+        }
       }
       input {
         border: none;
@@ -73,14 +75,9 @@ const Pagination = ({ totalPages }) => {
           <FaChevronLeft />
         </button>
         <div className='form-control'>
-          <input
-            type='number'
-            min={1}
-            max={totalPages}
-            value={state.currentPage}
-            readOnly
-          />
-          <p>/{totalPages}</p>
+          <p>
+            <span>{state.currentPage}</span>/{totalPages}
+          </p>
         </div>
         <button
           className='btn'
